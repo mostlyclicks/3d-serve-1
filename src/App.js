@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import '@google/model-viewer';
+import Logo from "./logo.svg"
+import Model from "./Model-Viewer-Test-File.glb"
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Test Model</h1>
+      <img src={Logo} alt="logo" />
+
+    
+      <model-viewer
+        src={Model}
+        // ios-src={../Link/To/Model.usdz}
+        alt='model name'
+        ar
+        loading='lazy'
+        camera-controls
+        // poster={../Link/To/Image.png}
+        autoplay>
+      </model-viewer>
+
     </div>
   );
 }
